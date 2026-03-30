@@ -4,10 +4,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-5rm7z5cuv$+piy#msn_(i7k^9!$^nv_1a3n74c^o4&_)e%!l54'
 
-DEBUG = False  # ← Turn OFF for production
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    '207.180.201.93',   # ← plain IP (no prefix on an IP address)
+    '207.180.201.93',
+    'aec.207.180.201.93',
     'localhost',
     '127.0.0.1',
 ]
@@ -74,24 +75,26 @@ USE_I18N = True
 USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# --- Static files ---
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'   # ← where collectstatic writes to
+STATIC_URL = '/django-static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# --- CORS ---
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://207.180.201.93",
+    "http://aec.207.180.201.93",
+    "https://aec.207.180.201.93",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
-# --- CSRF ---
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://207.180.201.93",
+    "http://aec.207.180.201.93",
+    "https://aec.207.180.201.93",
 ]
 
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
+EOF
