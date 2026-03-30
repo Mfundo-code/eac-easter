@@ -4,10 +4,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-5rm7z5cuv$+piy#msn_(i7k^9!$^nv_1a3n74c^o4&_)e%!l54'
 
-DEBUG = True
+DEBUG = False  # ← Turn OFF for production
 
 ALLOWED_HOSTS = [
-    'aec.207.180.201.93',
+    '207.180.201.93',   # ← plain IP (no prefix on an IP address)
     'localhost',
     '127.0.0.1',
 ]
@@ -62,47 +62,36 @@ DATABASES = {
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
-
-STATIC_URL = 'static/'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# --- Static files ---
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'   # ← where collectstatic writes to
 
 # --- CORS ---
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://aec.207.180.201.93",
+    "http://207.180.201.93",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
 # --- CSRF ---
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    "https://aec.207.180.201.93",
+    "http://207.180.201.93",
 ]
 
-# --- Session / Cookie settings ---
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_SECURE = False  
-CSRF_COOKIE_SECURE = False    
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
