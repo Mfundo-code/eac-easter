@@ -6,7 +6,7 @@ import Admin from './admin';
 
 const API_BASE = process.env.NODE_ENV === 'development'
   ? 'http://localhost:8000/api'
-  : 'https://aec.207.180.201.93/api';
+  : 'https://aec.207.180.201.93.sslip.io/api';
 
 const API_URL = `${API_BASE}/questions/`;
 

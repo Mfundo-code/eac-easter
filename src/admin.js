@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const API_BASE = process.env.NODE_ENV === 'development'
   ? 'http://localhost:8000/api'
-  : 'https://aec.207.180.201.93/api';
+  : 'https://aec.207.180.201.93.sslip.io/api';
 
 async function getCSRFToken() {
   const res = await fetch(`${API_BASE}/admin/csrf/`, { credentials: 'include' });

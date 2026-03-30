@@ -11,6 +11,7 @@ ALLOWED_HOSTS = [
     'aec.207.180.201.93',
     'localhost',
     '127.0.0.1',
+    'aec.207.180.201.93.sslip.io',
 ]
 
 INSTALLED_APPS = [
@@ -81,16 +82,14 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://207.180.201.93",
-    "http://aec.207.180.201.93",
-    "https://aec.207.180.201.93",
+    'https://aec.207.180.201.93.sslip.io/api',
 ]
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://207.180.201.93",
-    "http://aec.207.180.201.93",
-    "https://aec.207.180.201.93",
+    'https://aec.207.180.201.93.sslip.io/api',
 ]
 
 SESSION_COOKIE_SAMESITE = 'Lax'
