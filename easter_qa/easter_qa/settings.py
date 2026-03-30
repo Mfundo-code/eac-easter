@@ -74,6 +74,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/django-static/'
@@ -82,18 +83,18 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://207.180.201.93",
-    'https://aec.207.180.201.93.sslip.io/api',
+    "https://aec.207.180.201.93.sslip.io",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://207.180.201.93",
-    'https://aec.207.180.201.93.sslip.io/api',
+    "https://aec.207.180.201.93.sslip.io",
 ]
 
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
-EOF

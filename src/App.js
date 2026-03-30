@@ -194,7 +194,7 @@ const globalCSS = `
   .admin-btn:hover { background: #fff; }
 
   .qr-card {
-    margin-top: 339px;
+    margin-top: 328px;
     background: #fff;
     border-radius: 16px;
     padding: 20px;
